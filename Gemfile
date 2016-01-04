@@ -8,7 +8,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
 end
 
 group :development do
@@ -16,3 +18,7 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
