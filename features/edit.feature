@@ -1,6 +1,5 @@
 Feature: Edit
 
-  @wip
   Scenario: A fan registers with the site
     Given a fan is registered
       And the fan is signed in
