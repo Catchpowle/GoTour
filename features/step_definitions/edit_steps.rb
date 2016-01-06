@@ -19,11 +19,25 @@ When(/^the fan enters valid details into the edit form$/) do
 end
 
 When(/^they click update$/) do
-  sleep 2
   click_on 'Update'
-  save_and_open_page
 end
 
 Then(/^a fan should be updated$/) do
   expect(Fan.first.name).to eq('Jonathan Catchpowle')
+end
+
+Given(/^the artist is on it's edit page$/) do
+  visit edit_artist_registration_path
+end
+
+When(/^the artist enters valid details into the edit form$/) do
+  save_and_open_page
+  fill_in 'Name', with: 'The Band'
+  fill_in 'Bio', with: 'Sweet music playing folk'
+  fill_in :artist_current_password, with: 'password'
+end
+
+Then(/^an artist should be updated$/) do
+  expect(Artist.first.name).to eq('The Band')
+  expect(Artist.first.bio).to eq('Sweet music playing folk')
 end
