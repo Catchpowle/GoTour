@@ -6,7 +6,6 @@ Feature: Profile
     When a fan visits their profile
     Then a fan should see their information
 
-  @wip
   Scenario: An artist has a profile
     Given an artist is registered
       And the artist is signed in

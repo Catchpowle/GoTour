@@ -12,7 +12,7 @@ end
 
 Given(/^the artist is signed in$/) do
   visit new_artist_session_path
-  fill_in 'Email', with: 'artistn@email.com'
+  fill_in 'Email', with: 'artist@email.com'
   fill_in 'Password', with: 'password'
   click_button 'Log in'
 end
