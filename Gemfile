@@ -9,8 +9,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'carrierwave'
 gem 'omniauth-facebook'
-gem 'oauth2'
-gem 'httparty'
 
 group :development, :test do
   gem 'pry-byebug'
