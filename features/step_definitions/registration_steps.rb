@@ -7,8 +7,24 @@ When(/^a user clicks to register as a fan$/) do
 end
 
 When(/^the user fills in the form with valid fan registration information$/) do
+  Geocoder::Lookup::Test.add_stub(
+    "London, UK", [
+      {
+        'latitude'     => 51.5073509,
+        'longitude'    => -0.1277583,
+        'address'      => 'London, UK',
+        'state'        => 'London',
+        'state_code'   => '',
+        'country'      => 'UK',
+        'country_code' => 'UK'
+      }
+    ]
+  )
+
   fill_in 'Email', with: 'jon@email.com'
   fill_in 'Name', with: 'Jon Catchpowle'
+  fill_in 'City', with: 'London'
+  fill_in 'Country', with: 'UK'
   fill_in 'Password', with: 'password'
   fill_in 'Password confirmation', with: 'password'
 end
@@ -21,6 +37,8 @@ Then(/^a fan should be created$/) do
   expect(Fan.all.length).to eq(1)
   expect(Fan.first.email).to eq('jon@email.com')
   expect(Fan.first.name).to eq('Jon Catchpowle')
+  expect(Fan.first.city).to eq('London')
+  expect(Fan.first.country).to eq('UK')
 end
 
 Then(/^I'm taken to the homepage$/) do
