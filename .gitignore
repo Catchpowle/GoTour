@@ -16,5 +16,8 @@
 !/log/.keep
 /tmp
 
-# Ignore public files
+# Ignore public folder.
 /public
+
+# Ignore coverage folder.
+/coverage/.resultset.json

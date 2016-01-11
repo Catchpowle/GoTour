@@ -11,6 +11,7 @@ gem 'underscore-rails'
 gem 'devise'
 gem 'carrierwave'
 gem 'omniauth-facebook'
+gem 'geocoder'
 
 group :development, :test do
   gem 'pry-byebug'
