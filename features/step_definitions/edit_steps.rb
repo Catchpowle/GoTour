@@ -14,7 +14,23 @@ Given(/^the fan is on it's edit page$/) do
 end
 
 When(/^the fan enters valid details into the edit form$/) do
+  Geocoder::Lookup::Test.add_stub(
+    "London, UK", [
+      {
+        'latitude'     => 51.5073509,
+        'longitude'    => -0.1277583,
+        'address'      => 'London, UK',
+        'state'        => 'London',
+        'state_code'   => '',
+        'country'      => 'UK',
+        'country_code' => 'UK'
+      }
+    ]
+  )
+  
   fill_in 'Name', with: 'Jonathan Catchpowle'
+  fill_in 'City', with: 'London'
+  fill_in 'Country', with: 'UK'
   fill_in :fan_current_password, with: 'password'
 end
 
@@ -24,6 +40,8 @@ end
 
 Then(/^a fan should be updated$/) do
   expect(Fan.first.name).to eq('Jonathan Catchpowle')
+  expect(Fan.first.city).to eq('London')
+  expect(Fan.first.country).to eq('UK')
 end
 
 Given(/^the artist is on it's edit page$/) do
