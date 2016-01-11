@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160107171931) do
+ActiveRecord::Schema.define(version: 20160111011501) do
 
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(version: 20160107171931) do
     t.string   "avatar"
     t.string   "provider"
     t.string   "uid"
+    t.string   "city"
+    t.string   "country"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
