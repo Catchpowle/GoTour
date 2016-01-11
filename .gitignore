@@ -20,4 +20,4 @@
 /public
 
 # Ignore coverage folder.
-/coverage/.resultset.json
+/coverage
