@@ -1,2 +1,11 @@
 <h1><%= @artist.name %></h1>
+<% if current_fan %>
+  <div id='request'>
+    <% if current_fan.artists.exclude? @artist %>
+      <%= link_to 'Request', requests_path(artist: @artist.id), method: :post,  remote: true %>
+    <% else %>
+      <%= link_to 'Cancel Request', request_path(@request, artist: @artist.id), method: :delete, remote: true  %>
+    <% end %>
+  </div>
+<% end %>
 <p><%= @artist.bio %></p>

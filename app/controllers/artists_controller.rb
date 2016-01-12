@@ -2,6 +2,9 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    if current_fan
+      @request = Request.where(artist: @artist, fan: current_fan).first
+    end
   end
 
   def search
