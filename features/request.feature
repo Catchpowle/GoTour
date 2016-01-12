@@ -3,6 +3,7 @@ Feature: Request an artist
     Given a fan is registered
       And the fan is signed in
       And an artist exists
+      And the fan has requested several artists
 
   @javascript
   Scenario: A fan request an artist

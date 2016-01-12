@@ -1,9 +1,19 @@
+Given(/^the fan has requested several artists$/) do
+  Fan.first.artists << Artist.first
+  Fan.first.artists << Artist.third
+end
+
 When(/^a fan visits their profile$/) do
   visit fan_path(Fan.first)
 end
 
 Then(/^a fan should see their information$/) do
   expect(page).to have_content('Jon Catchpowle')
+end
+
+Then(/^the fan should see a list of the artists they have requested$/) do
+  expect(page).to have_content('Radiohead')
+  expect(page).to have_content('The Rolling Stones')
 end
 
 Given(/^an artist is registered$/) do
