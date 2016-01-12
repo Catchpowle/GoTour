@@ -1,4 +1,4 @@
-Feature: Search Bucketlist
+Feature: Search for an artist
   Background:
     Given a fan is registered
       And the fan is signed in

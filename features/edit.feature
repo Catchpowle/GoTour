@@ -1,6 +1,5 @@
 Feature: Edit
 
-  @wip
   Scenario: A fan edits it's profile
     Given a fan is registered
       And the fan is signed in
