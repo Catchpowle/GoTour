@@ -3,10 +3,9 @@ Feature: Request an artist
     Given a fan is registered
       And the fan is signed in
       And an artist exists
-      And the fan has requested several artists
 
   @javascript
-  Scenario: A fan request an artist
+  Scenario: A fan requests an artist
     Given the fan is on the artists page
     When the fan requests the artist
     Then the fan should have an artist
