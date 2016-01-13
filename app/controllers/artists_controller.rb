@@ -2,8 +2,10 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @cities = @artist.top_ten_cities
     if current_fan
       @request = Request.where(artist: @artist, fan: current_fan).first
+      @fans_city = @artist.fans_city(current_fan)
     end
   end
 

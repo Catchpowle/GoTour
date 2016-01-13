@@ -9,3 +9,11 @@
   </div>
 <% end %>
 <p><%= @artist.bio %></p>
+<% if current_fan %>
+  <p><%= "#{@fans_city[0]}: #{@fans_city[1]}" %></p>
+<% end %>
+<ul id="cities">
+  <% @cities.each do |c| %>
+    <li><%= "#{c[0]}: #{c[1]}" %></li>
+  <% end %>
+</ul>
