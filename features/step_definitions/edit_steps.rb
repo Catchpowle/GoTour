@@ -1,5 +1,18 @@
 Given(/^a fan is registered$/) do
-  Fan.create!(email: 'jon@email.com', name: 'Jon Catchpowle', password: 'password', password_confirmation: 'password')
+  Geocoder::Lookup::Test.add_stub(
+    "London, UK", [
+      {
+        'latitude'     => 51.5073509,
+        'longitude'    => -0.1277583,
+        'address'      => 'London, UK',
+        'state'        => 'London',
+        'state_code'   => '',
+        'country'      => 'UK',
+        'country_code' => 'UK'
+      }
+    ]
+  )
+  Fan.create!(email: 'jon@email.com', name: 'Jon Catchpowle', password: 'password', password_confirmation: 'password', city: 'London', country: 'UK')
 end
 
 Given(/^the fan is signed in$/) do
