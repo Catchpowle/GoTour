@@ -1,4 +1,9 @@
 <h1><%= @fan.name %></h1>
+<h3>Artists you've requested</h3>
 <% @fan.artists.each do |a| %>
   <p><%= a.name %></p>
+<% end %>
+<h2>Other artists requested in your city</h2>
+<% @other_artist_list.each do |o| %>
+  <p><%= o.name %>
 <% end %>
