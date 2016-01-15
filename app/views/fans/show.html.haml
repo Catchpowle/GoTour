@@ -1,0 +1,9 @@
+%h1= @fan.name
+%span 
+  = link_to "Edit", edit_fan_registration_path(@fan) 
+%h3 Artists you've requested
+- @fan.artists.each do |a|
+  %p= link_to a.name, artist_path(a)
+%h2 Other artists requested in your city
+- @other_artist_list.each do |o|
+  %p= link_to o.name, artist_path(o)

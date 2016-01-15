@@ -1,0 +1,11 @@
+= form_for :route, :url => {:action => "plot" }, remote: :true do |f|
+  = f.label :total_cities
+  = f.select :total_cities, @total_fans
+  = f.label :start
+  = f.select :start, @cities
+  = f.label :finish
+  = f.select :finish, @cities
+  = f.submit :submit
+
+#map
+  #map-canvas{data: { fans: @fans_json, waypoints: @waypoints_json }}

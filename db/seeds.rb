@@ -5,3 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'faker'
+
+Artist.create!(email: 'thestroke@email.com', name: 'The Strokes', bio: 'Folk from last night', password: 'password', password_confirmation: 'password')
+2.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "London", country: "UK").artists << Artist.first }
+24.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Edinburgh", country: "UK").artists << Artist.first }
+16.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Cardiff", country: "UK").artists << Artist.first }
+20.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Birmingham", country: "UK").artists << Artist.first }
+12.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Glasgow", country: "UK").artists << Artist.first }
+4.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Swansea", country: "UK").artists << Artist.first }
+22.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Leeds", country: "UK").artists << Artist.first }
+8.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Bristol", country: "UK").artists << Artist.first }
+14.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Newcastle", country: "UK").artists << Artist.first }
+10.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Nottingham", country: "UK").artists << Artist.first }
+18.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Sheffield", country: "UK").artists << Artist.first }
+6.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Liverpool", country: "UK").artists << Artist.first }

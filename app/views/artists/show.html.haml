@@ -1,0 +1,15 @@
+%h1= @artist.name
+- if current_fan
+  #request
+    - if current_fan.artists.exclude? @artist
+      = link_to 'Request', requests_path(artist: @artist.id), method: :post,  remote: true
+    - else
+      = link_to 'Cancel Request', request_path(@request, artist: @artist.id), method: :delete, remote: true
+%p= @artist.bio
+- if current_fan
+  %p= "#{@fans_city[0]}: #{@fans_city[1]}"
+%ul#cities
+  - @cities.each do |c|
+    %li= "#{c[0]}: #{c[1]}"
+#map
+  #map-canvas{data: { fans: @fans_json }}
