@@ -12,6 +12,8 @@ gem 'devise'
 gem 'carrierwave'
 gem 'omniauth-facebook'
 gem 'geocoder'
+gem "mini_magick"
+gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'pry-byebug'

@@ -1,2 +1,2 @@
-$("#request").html('<%= link_to "Cancel Request", request_path(@request), remote: true, method: :delete %>')
+$("#request").html('<%= link_to "Cancel Request", request_path(@request), remote: true, method: :delete %>');
 createMarker(<%= @request.fan.latitude %>, <%= @request.fan.longitude %>, "<%= @request.fan.city %>");

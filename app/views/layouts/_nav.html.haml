@@ -1,0 +1,36 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %a.navbar-brand{:href => "#"} GoTour
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %form.navbar-form.navbar-left{:role => "search"}
+        .form-group
+          .search
+            = form_tag search_artists_path, method: "get" do
+              = text_field_tag :search, nil, type: "text", placeholder: "Search", class: "form-control"
+              #search-results
+      %ul.nav.navbar-nav.navbar-right
+        - unless current_fan || current_artist
+          %li{ "data-toggle" => "modal", "data-target" => "#sign-in-modal" }
+            %a Sign In
+        = if current_artist
+          %li
+            = link_to "Generate Route", route_artist_path(current_artist)
+        - if current_fan || current_artist
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Options
+              %span.caret
+            %ul.dropdown-menu
+              = if current_artist
+                %li
+                  = link_to "Edit", edit_artist_registration_path(current_artist)
+                %li
+                  = link_to "Sign Out", destroy_artist_session_path, method: :delete
+              = if current_fan
+                %li
+                  = link_to "Edit", edit_fan_registration_path(current_artist)
+                %li
+                  = link_to "Sign Out", destroy_fan_session_path, method: :delete

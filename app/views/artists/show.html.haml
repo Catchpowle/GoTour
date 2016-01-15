@@ -1,15 +1,35 @@
-%h1= @artist.name
-- if current_fan
-  #request
-    - if current_fan.artists.exclude? @artist
-      = link_to 'Request', requests_path(artist: @artist.id), method: :post,  remote: true
-    - else
-      = link_to 'Cancel Request', request_path(@request, artist: @artist.id), method: :delete, remote: true
-%p= @artist.bio
-- if current_fan
-  %p= "#{@fans_city[0]}: #{@fans_city[1]}"
-%ul#cities
-  - @cities.each do |c|
-    %li= "#{c[0]}: #{c[1]}"
-#map
-  #map-canvas{data: { fans: @fans_json }}
+.row
+  .col-md-4
+    #profile.panel.panel-default
+      .panel-heading
+        = image_tag @artist.avatar.url(:full)
+      .panel-body
+        %h3= @artist.name
+        %p= @artist.bio
+
+  .col-md-2.col-md-offset-6
+    - if current_fan
+      #request
+        - if current_fan.artists.exclude? @artist
+          = link_to 'Request', requests_path(artist: @artist.id), method: :post,  remote: true
+        - else
+          = link_to 'Cancel Request', request_path(@request, artist: @artist.id), method: :delete, remote: true
+.row
+  .col-md-4
+    - if current_fan
+      %h4 My city
+      .panel.panel-default
+        .panel-body
+          = @fans_city[0]
+          %span.badge
+            = @fans_city[1]
+      %h4 Most popular cities
+      %ul#cities.list-group
+        - @cities.each do |c|
+          %li.list-group-item
+            = c[0]
+            %span.badge
+              = c[1]
+  .col-md-8
+    #map
+      #map-canvas{data: { fans: @fans_json }}

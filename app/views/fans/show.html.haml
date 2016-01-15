@@ -1,9 +1,28 @@
-%h1= @fan.name
-%span 
-  = link_to "Edit", edit_fan_registration_path(@fan) 
+.row
+  .col-md-4
+    #profile.panel.panel-default
+      .panel-heading
+        = image_tag @fan.avatar.url(:full)
+      .panel-body
+        %h3= @fan.name
+
 %h3 Artists you've requested
 - @fan.artists.each do |a|
-  %p= link_to a.name, artist_path(a)
-%h2 Other artists requested in your city
+  .row
+    .col-md-4
+      #profile.panel.panel-default
+        .panel-heading
+          = image_tag a.avatar.url(:full)
+        .panel-body
+          %h4= link_to a.name, artist_path(a)
+          %p= a.bio
+%h3 Other artists requested in your city
 - @other_artist_list.each do |o|
-  %p= link_to o.name, artist_path(o)
+  .row
+    .col-md-4
+      #profile.panel.panel-default
+        .panel-heading
+          = image_tag o.avatar.url(:full)
+        .panel-body
+          %h4= link_to o.name, artist_path(o)
+          %p= o.bio
