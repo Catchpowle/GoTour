@@ -13,7 +13,8 @@
       .form-group
         = f.label :finish
         = f.select :finish, @cities, {}, {:class => "form-control"}
-      = f.submit :submit
+      = f.submit :Submit, {:class => "btn btn-danger"}
   .col-md-8
     #map
       #map-canvas{ data: { fans: @fans_json, waypoints: @waypoints_json }}
+

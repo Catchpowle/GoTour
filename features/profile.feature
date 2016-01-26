@@ -21,7 +21,7 @@ Feature: Profile
     Then an artist should see their information
       And a fan should see the ten cities they have recieved the most requests from
 
-  Scenario: A fan visits and artists profile
+  Scenario: A fan visits an artists profile
   Given a fan is registered
     And the fan is signed in
     And an artist exists

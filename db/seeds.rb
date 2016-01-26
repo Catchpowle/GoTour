@@ -7,8 +7,13 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
-Artist.create!(email: 'thestroke@email.com', name: 'The Strokes', bio: 'Folk from last night', password: 'password', password_confirmation: 'password')
-2.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "London", country: "UK").artists << Artist.first }
+2.times do
+  fan = Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "London", country: "UK")
+  fan.artists << Artist.third
+  fan.artists << Artist.fourth
+  fan.artists << Artist.fifth
+end
+
 24.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Edinburgh", country: "UK").artists << Artist.first }
 16.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Cardiff", country: "UK").artists << Artist.first }
 20.times { Fan.create!(email: Faker::Internet.email, name: Faker::Name.name, password: 'password', password_confirmation: 'password', city: "Birmingham", country: "UK").artists << Artist.first }

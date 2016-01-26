@@ -11,7 +11,7 @@ When(/^the fan requests the artist$/) do
 end
 
 Then(/^the fan should have an artist$/) do
-  sleep 1
+  sleep 0.1
   expect(Fan.first.artists.length).to eq(1)
 end
 
@@ -28,7 +28,7 @@ When(/^the fan cancels the request for the artist$/) do
 end
 
 Then(/^the fan should no longer have an artist$/) do
-  sleep 1
+  sleep 0.1
   expect(Fan.first.artists.length).to eq(0)
 end
 

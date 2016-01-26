@@ -6,8 +6,11 @@
       .panel-body
         %h3= @artist.name
         %p= @artist.bio
-
-  .col-md-2.col-md-offset-6
+  .col-md-8
+    #map
+      #map-canvas{data: { fans: @fans_json }}
+.row
+  .col-md-2
     - if current_fan
       #request
         - if current_fan.artists.exclude? @artist
@@ -23,13 +26,10 @@
           = @fans_city[0]
           %span.badge
             = @fans_city[1]
-      %h4 Most popular cities
-      %ul#cities.list-group
-        - @cities.each do |c|
-          %li.list-group-item
-            = c[0]
-            %span.badge
-              = c[1]
-  .col-md-8
-    #map
-      #map-canvas{data: { fans: @fans_json }}
+    %h4 Most popular cities
+    %ul#cities.list-group
+      - @cities.each do |c|
+        %li.list-group-item
+          = "#{c[0][0]}, #{c[0][1]}"
+          %span.badge
+            = c[1]

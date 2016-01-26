@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-15T10:42:02+00:00">2016-01-15T10:42:02+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-18T18:18:08+00:00">2016-01-18T18:18:08+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">85.3%</span></span>
+    (<span class="covered_percent"><span class="yellow">86.12%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.52
+         3.54
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>48</b> files in total.
-    <b>415</b> relevant lines. 
-    <span class="green"><b>354</b> lines covered</span> and
-    <span class="red"><b>61</b> lines missed </span>
+    <b>418</b> relevant lines. 
+    <span class="green"><b>360</b> lines covered</span> and
+    <span class="red"><b>58</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -62,12 +62,12 @@
       
       <tr>
         <td class="strong"><a href="#bee7279bea40f91621605c1d127e52293f975aaf" class="src_link" title="app/controllers/artists_controller.rb">app/controllers/artists_controller.rb</a></td>
-        <td class="red strong">71.43 %</td>
-        <td>33</td>
-        <td>21</td>
-        <td>15</td>
-        <td>6</td>
-        <td>9.0</td>
+        <td class="yellow strong">81.82 %</td>
+        <td>36</td>
+        <td>22</td>
+        <td>18</td>
+        <td>4</td>
+        <td>8.4</td>
       </tr>
       
       <tr>
@@ -162,12 +162,12 @@
       
       <tr>
         <td class="strong"><a href="#eec6cc12f17784edddf4212124f47a8a9ddbc5ec" class="src_link" title="app/models/artist.rb">app/models/artist.rb</a></td>
-        <td class="red strong">53.57 %</td>
-        <td>43</td>
-        <td>28</td>
-        <td>15</td>
-        <td>13</td>
-        <td>2.4</td>
+        <td class="red strong">60.0 %</td>
+        <td>47</td>
+        <td>30</td>
+        <td>18</td>
+        <td>12</td>
+        <td>3.0</td>
       </tr>
       
       <tr>
@@ -193,7 +193,7 @@
       <tr>
         <td class="strong"><a href="#080a36b5a98fe878644d2c6abc6f6e3f1774c550" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="red strong">66.67 %</td>
-        <td>27</td>
+        <td>25</td>
         <td>15</td>
         <td>10</td>
         <td>5</td>
@@ -681,11 +681,11 @@
         <div class="source_table" id="bee7279bea40f91621605c1d127e52293f975aaf">
   <div class="header">
     <h3>app/controllers/artists_controller.rb</h3>
-    <h4><span class="red">71.43 %</span> covered</h4>
+    <h4><span class="yellow">81.82 %</span> covered</h4>
     <div>
-      <b>21</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <b>22</b> relevant lines. 
+      <span class="green"><b>18</b> lines covered</span> and
+      <span class="red"><b>4</b> lines missed.</span>
     </div>
   </div>
   
@@ -698,22 +698,22 @@
           <code class="ruby">class ArtistsController &lt; ApplicationController</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
+        <li class="covered" data-hits="2" data-linenumber="2">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  before_filter :find_artist, only: [:show, :route, :plot]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="3">
+        <li class="covered" data-hits="2" data-linenumber="4">
           <span class="hits">2</span>
           
           <code class="ruby">  def show</code>
-        </li>
-      
-        <li class="covered" data-hits="10" data-linenumber="4">
-          <span class="hits">10</span>
-          
-          <code class="ruby">    @artist = Artist.find(params[:id])</code>
         </li>
       
         <li class="covered" data-hits="10" data-linenumber="5">
@@ -770,121 +770,139 @@
           <code class="ruby">  def search</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="14">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="23" data-linenumber="14">
+          <span class="hits">23</span>
           
           <code class="ruby">    @artists = Artist.where(&quot;name LIKE ?&quot;, &quot;%#{params[:search]}%&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="25" data-linenumber="16">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="23" data-linenumber="15">
+          <span class="hits">23</span>
           
           <code class="ruby">    respond_to do |format|</code>
         </li>
       
-        <li class="covered" data-hits="50" data-linenumber="17">
-          <span class="hits">50</span>
+        <li class="covered" data-hits="46" data-linenumber="16">
+          <span class="hits">46</span>
           
           <code class="ruby">      format.json { render :json =&gt; @artists }</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="18">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="23" data-linenumber="17">
+          <span class="hits">23</span>
           
           <code class="ruby">      format.html { redirect_to root_path(@artists) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="22">
+        <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
           <code class="ruby">  def route   </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
-          
-          <code class="ruby">    @artist = Artist.find(params[:id])</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
           <code class="ruby">    @total_fans = [*1..@artist.city_count]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="25">
+        <li class="missed" data-hits="0" data-linenumber="23">
           
           
           <code class="ruby">    @cities = @artist.all_cities</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="28">
+        <li class="covered" data-hits="2" data-linenumber="26">
           <span class="hits">2</span>
           
           <code class="ruby">  def plot</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="29">
-          
-          
-          <code class="ruby">    @artist = Artist.find(params[:id])</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="27">
           
           
           <code class="ruby">    route = params[:route]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
           <code class="ruby">    @waypoints_json = @artist.json_cities(route[:start], route[:finish], route[:total_cities].to_i)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="29">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="31">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="32">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  def find_artist</code>
+        </li>
+      
+        <li class="covered" data-hits="10" data-linenumber="33">
+          <span class="hits">10</span>
+          
+          <code class="ruby">    @artist = Artist.find(params[:id])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="36">
           
           
           <code class="ruby">end</code>
@@ -1317,11 +1335,11 @@
         <div class="source_table" id="eec6cc12f17784edddf4212124f47a8a9ddbc5ec">
   <div class="header">
     <h3>app/models/artist.rb</h3>
-    <h4><span class="red">53.57 %</span> covered</h4>
+    <h4><span class="red">60.0 %</span> covered</h4>
     <div>
-      <b>28</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
-      <span class="red"><b>13</b> lines missed.</span>
+      <b>30</b> relevant lines. 
+      <span class="green"><b>18</b> lines covered</span> and
+      <span class="red"><b>12</b> lines missed.</span>
     </div>
   </div>
   
@@ -1358,10 +1376,10 @@
           <code class="ruby">  def top_ten_cities</code>
         </li>
       
-        <li class="covered" data-hits="25" data-linenumber="6">
-          <span class="hits">25</span>
+        <li class="covered" data-hits="10" data-linenumber="6">
+          <span class="hits">10</span>
           
-          <code class="ruby">    self.fans.group(:city).count.sort_by{|k, v| v}.reverse.first(10)</code>
+          <code class="ruby">    sort_fans(grouped_fans).first(10)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
@@ -1403,7 +1421,7 @@
         <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">    top_cities = grouped_fans.sort_by{|k, v| v}.reverse.first(num)</code>
+          <code class="ruby">    top_cities = sort_fans(grouped_fans).first(num)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="14">
@@ -1544,8 +1562,8 @@
           <code class="ruby">  def grouped_fans</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="37">
-          
+        <li class="covered" data-hits="10" data-linenumber="37">
+          <span class="hits">10</span>
           
           <code class="ruby">    self.fans.group([:city, :country]).count</code>
         </li>
@@ -1565,13 +1583,13 @@
         <li class="covered" data-hits="2" data-linenumber="40">
           <span class="hits">2</span>
           
-          <code class="ruby">  def location_strings(grouped_fans)</code>
+          <code class="ruby">  def sort_fans(fans)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="41">
+        <li class="covered" data-hits="25" data-linenumber="41">
+          <span class="hits">25</span>
           
-          
-          <code class="ruby">    grouped_fans.map{|x|&quot;#{x[0][0]}, #{x[0][1]}&quot;}</code>
+          <code class="ruby">    fans.sort_by{|k, v| v}.reverse</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="42">
@@ -1581,6 +1599,30 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="43">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="44">
+          <span class="hits">2</span>
+          
+          <code class="ruby">  def location_strings(grouped_fans)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="45">
+          
+          
+          <code class="ruby">    grouped_fans.map{|x|&quot;#{x[0][0]}, #{x[0][1]}&quot;}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="46">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="47">
           
           
           <code class="ruby">end</code>
@@ -1808,145 +1850,133 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby">  # Include default devise modules. Others available are:</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="5">
-          
-          
-          <code class="ruby">  # :confirmable, :lockable, :timeoutable and :omniauthable</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="6">
+        <li class="covered" data-hits="2" data-linenumber="4">
           <span class="hits">2</span>
           
           <code class="ruby">  devise :database_authenticatable, :registerable,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">         :recoverable, :rememberable, :trackable, :validatable</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="9">
+        <li class="covered" data-hits="2" data-linenumber="7">
           <span class="hits">2</span>
           
           <code class="ruby">  validates_integrity_of  :avatar</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="10">
+        <li class="covered" data-hits="2" data-linenumber="8">
           <span class="hits">2</span>
           
           <code class="ruby">  validates_processing_of :avatar</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="12">
+        <li class="covered" data-hits="2" data-linenumber="10">
           <span class="hits">2</span>
           
           <code class="ruby">  geocoded_by :geocode_string</code>
         </li>
       
-        <li class="covered" data-hits="205" data-linenumber="13">
+        <li class="covered" data-hits="205" data-linenumber="11">
           <span class="hits">205</span>
           
           <code class="ruby">  before_save :geocode, :if =&gt; Proc.new { |profile| profile.city_changed? || profile.country_changed? }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
+        <li class="covered" data-hits="2" data-linenumber="13">
           <span class="hits">2</span>
           
           <code class="ruby">  def geocode_string</code>
         </li>
       
-        <li class="covered" data-hits="177" data-linenumber="16">
+        <li class="covered" data-hits="177" data-linenumber="14">
           <span class="hits">177</span>
           
           <code class="ruby">    &quot;#{city}, #{country}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="19">
+        <li class="covered" data-hits="2" data-linenumber="17">
           <span class="hits">2</span>
           
           <code class="ruby">  def self.from_omniauth(auth)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
+        <li class="missed" data-hits="0" data-linenumber="18">
           
           
           <code class="ruby">    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
+        <li class="missed" data-hits="0" data-linenumber="19">
           
           
           <code class="ruby">      user.email = auth.info.email</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
+        <li class="missed" data-hits="0" data-linenumber="20">
           
           
           <code class="ruby">      user.password = Devise.friendly_token[0,20]</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
+        <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">      user.name = auth.info.name   # assuming the user model has a name</code>
+          <code class="ruby">      user.name = auth.info.name</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
+        <li class="missed" data-hits="0" data-linenumber="22">
           
           
-          <code class="ruby">      user.avatar = auth.info.image # assuming the user model has an image</code>
+          <code class="ruby">      user.avatar = auth.info.image</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="23">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">end</code>
@@ -7787,7 +7817,7 @@
         <li class="covered" data-hits="3" data-linenumber="14">
           <span class="hits">3</span>
           
-          <code class="ruby">  sleep 1</code>
+          <code class="ruby">  sleep 0.1</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="15">
@@ -7889,7 +7919,7 @@
         <li class="covered" data-hits="2" data-linenumber="31">
           <span class="hits">2</span>
           
-          <code class="ruby">  sleep 1</code>
+          <code class="ruby">  sleep 0.1</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="32">
