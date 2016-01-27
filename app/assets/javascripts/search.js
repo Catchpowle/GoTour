@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
   var searchResultList = _.template("<h3>Results (<%= results.length %>)</h3><ul class='results'></ul>");
-  var searchResult = _.template("<li class='result'><%= result.name %></li>");
+  var searchResult = _.template("<li class='result'><a href='http://localhost:3000/artists/<%= result.id %>'><%= result.name %></li>");
 
   $('#search').keyup(function(e) {
     var searchTerm = $(e.currentTarget).val();
