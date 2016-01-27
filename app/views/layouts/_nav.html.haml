@@ -2,7 +2,8 @@
   .container-fluid
     / Brand and toggle get grouped for better mobile display
     .navbar-header
-      %a.navbar-brand{:href => "#"} GoTour
+      .navbar-brand
+        = link_to "GoTour", root_path
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %form.navbar-form.navbar-left{:role => "search"}
@@ -15,9 +16,14 @@
         - unless current_fan || current_artist
           %li{ "data-toggle" => "modal", "data-target" => "#sign-in-modal" }
             %a Sign In
+        - if current_fan
+          %li
+            = link_to current_fan.name, fan_path(current_fan)
         - if current_artist
           %li
             = link_to "Generate Route", route_artist_path(current_artist)
+          %li
+            = link_to current_artist.name, artist_path(current_artist)
         - if current_fan || current_artist
           %li.dropdown
             %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}

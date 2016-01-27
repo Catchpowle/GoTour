@@ -257,19 +257,19 @@ Given(/^fans have requested the artist$/) do
 end
 
 Then(/^a fan should see the ten cities they have recieved the most requests from$/) do
-  page.should have_selector("ul#cities li:nth-child(1)", text: "Edinburgh: 24")
-  page.should have_selector("ul#cities li:nth-child(2)", text: "Leeds: 22")
-  page.should have_selector("ul#cities li:nth-child(3)", text: "Birmingham: 20")
-  page.should have_selector("ul#cities li:nth-child(4)", text: "Sheffield: 18")
-  page.should have_selector("ul#cities li:nth-child(5)", text: "Cardiff: 16")
-  page.should have_selector("ul#cities li:nth-child(6)", text: "Newcastle: 14")
-  page.should have_selector("ul#cities li:nth-child(7)", text: "Glasgow: 12")
-  page.should have_selector("ul#cities li:nth-child(8)", text: "Nottingham: 10")
-  page.should have_selector("ul#cities li:nth-child(9)", text: "Bristol: 8")
-  page.should have_selector("ul#cities li:nth-child(10)", text: "Liverpool: 6")
-  expect(page).not_to have_content "Swansea: 4"
+  page.should have_selector("ul#cities li:nth-child(1)", text: "Edinburgh, UK 24")
+  page.should have_selector("ul#cities li:nth-child(2)", text: "Leeds, UK 22")
+  page.should have_selector("ul#cities li:nth-child(3)", text: "Birmingham, UK 20")
+  page.should have_selector("ul#cities li:nth-child(4)", text: "Sheffield, UK 18")
+  page.should have_selector("ul#cities li:nth-child(5)", text: "Cardiff, UK 16")
+  page.should have_selector("ul#cities li:nth-child(6)", text: "Newcastle, UK 14")
+  page.should have_selector("ul#cities li:nth-child(7)", text: "Glasgow, UK 12")
+  page.should have_selector("ul#cities li:nth-child(8)", text: "Nottingham, UK 10")
+  page.should have_selector("ul#cities li:nth-child(9)", text: "Bristol, UK 8")
+  page.should have_selector("ul#cities li:nth-child(10)", text: "Liverpool, UK 6")
+  expect(page).not_to have_content "Swansea, UK 4"
 end
 
 Then(/^a fan should see their city$/) do
-  expect(page).to have_content("London: 1")
+  expect(page).to have_content("London 1")
 end

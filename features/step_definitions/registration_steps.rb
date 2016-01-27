@@ -3,8 +3,15 @@ Given(/^a user is on the home page$/) do
 end
 
 When(/^a user clicks to register as a fan$/) do
-  click_on('Fan')
+  within('.jumbotron') do
+    click_on('Fan')
+  end
 end
+
+When(/^then clicks to sign in with email$/) do
+  click_on('Email')
+end
+
 
 When(/^the user fills in the form with valid fan registration information$/) do
   Geocoder::Lookup::Test.add_stub(
@@ -41,12 +48,18 @@ Then(/^a fan should be created$/) do
   expect(Fan.first.country).to eq('UK')
 end
 
+Then(/^the fan is taken to it's profile page$/) do
+  expect(current_path).to eq(fan_path(Fan.first))
+end
+
 Then(/^I'm taken to the homepage$/) do
   expect(current_path).to eq(root_path)
 end
 
 When(/^a user clicks to register as an artist$/) do
-  click_on('Artist')
+  within('.jumbotron') do
+    click_on('Artist')
+  end
 end
 
 When(/^the user fills in the form with valid artist registration information$/) do
@@ -62,4 +75,8 @@ Then(/^an artist should be created$/) do
   expect(Artist.first.email).to eq('artist@email.com')
   expect(Artist.first.name).to eq('Band')
   expect(Artist.first.bio).to eq('Music playing folk')
+end
+
+Then(/^the artist is taken to it's profile page$/) do
+  expect(current_path).to eq(artist_path(Artist.first))
 end

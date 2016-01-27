@@ -1,0 +1,17 @@
+<div aria-labelledby="fan-sign-up-modal" class="modal fade" id="fan-sign-up-modal" role="dialog" tabindex="-1">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-label="Close" class="close" data-dismiss="modal" type="button">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="sign-in-modalLabel">Sign In</h4>
+      </div>
+      <div class="modal-body center">
+        <%= link_to 'Email', new_fan_registration_path, class: "btn btn-default btn-lg" %>
+        <span>or</span>
+        <%= link_to image_tag('facebook.png'), fan_omniauth_authorize_path(:facebook) %>
+      </div>
+    </div>
+  </div>
+</div>
